@@ -5,14 +5,12 @@ const router = Router();
 
 const controller = new ScoresController();
 
+router.get("/report", controller.getReport);
+
 router.get("/", controller.getAll);
 
 router.get("/:sbd", controller.getBySbd);
 
-router.post("/", controller.create);
-
-router.put("/:sbd", controller.update);
-
-router.delete("/:sbd", controller.delete);
+router.get("/top10/a", controller.getTop10GroupA);
 
 export default router;

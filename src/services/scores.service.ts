@@ -16,19 +16,11 @@ export class ScoresService {
     return data;
   }
 
-  async create(dto: any) {
-    const { data } = await this.repository.create(dto);
-
-    return data;
+  async getReport() {
+    return this.repository.getReport();
   }
 
-  async update(sbd: number, dto: any) {
-    const { data } = await this.repository.update(sbd, dto);
-
-    return data;
-  }
-
-  async delete(sbd: number) {
-    return this.repository.delete(sbd);
+  async getTop10GroupA() {
+    return this.repository.getTop10GroupA();
   }
 }

@@ -36,31 +36,27 @@ export class ScoresController {
     }
   };
 
-  create = async (req: Request, res: Response, next: NextFunction) => {
+  getReport = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const result = await this.service.create(req.body);
+      const result = await this.service.getReport();
 
-      res.status(201).json(result);
+      res.status(200).json({
+        status: "success",
+        data: result
+      });
     } catch (error) {
       next(error);
     }
   };
 
-  update = async (req: Request, res: Response, next: NextFunction) => {
+  getTop10GroupA = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const result = await this.service.update(Number(req.params.sbd), req.body);
+      const result = await this.service.getTop10GroupA();
 
-      res.json(result);
-    } catch (error) {
-      next(error);
-    }
-  };
-
-  delete = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      await this.service.delete(Number(req.params.sbd));
-
-      res.sendStatus(204);
+      res.status(200).json({
+        status: "success",
+        data: result
+      });
     } catch (error) {
       next(error);
     }
