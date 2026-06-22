@@ -3,7 +3,7 @@ import scoreRoutes from "./routes/scores.route";
 import { AppError } from "./utils/errors";
 import cors from "cors";
 
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = ["http://localhost:5173", "https://g-scores-red.vercel.app"];
 
 const app = express();
 
